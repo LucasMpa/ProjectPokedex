@@ -17,6 +17,7 @@ export const PokeCard = styled.div`
   padding-top: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   & > p {
       text-align: center;

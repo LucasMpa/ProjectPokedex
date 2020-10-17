@@ -2,10 +2,19 @@ import React from "react";
 import { ContainerCard, PokeCard} from "./styles";
 import Data from "../../exemple/pokedex.json";
 export default function ContentPokedex() {
-  return (
+
+    var str = Data[82].name;
+    alert( str.replace(/[\[\].!'@,><|://\\;&*()_+=]/g, "") )
+   return (
+
+
+  
+
+
     <ContainerCard>
-      {console.log(Data[0].name)}
+      
       {Data.map((images, index) => (
+          <div style={{display: "flex", justifyContent: "center"}}>
            <PokeCard>
            <p>
              {Data[index].name} #{Data[index].id}
@@ -18,31 +27,14 @@ export default function ContentPokedex() {
                width: "150px",
                height: "150px",
              }}
-             src={`https://ifpb.github.io/javascript-exercises/challenges/w3c/pokedex/code-response/img/${Data[index].name.toLocaleLowerCase()}.png`}
+             src={`https://ifpb.github.io/javascript-exercises/challenges/w3c/pokedex/code-response/img/${Data[index].name.toLocaleLowerCase().replace(/[\[\].!'@,><|://\\;&*()_+=]/g, "")}.png`}
            ></img>
            <p style={{ color: "#FFF" }}>{Data[index].type[0]}{Data[index].type[1] ? ' / '+ Data[index].type[1] : null}</p>
          </PokeCard>
-          ))}
-
-
-      {
-      <PokeCard>
-        <p>
-          {Data[0].name} #{Data[0].id}
-        </p>
-        <img
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            backgroundColor: "#e11",
-            width: "150px",
-            height: "150px",
-          }}
-          src={`https://ifpb.github.io/javascript-exercises/challenges/w3c/pokedex/code-response/img/${Data[0].name.toLocaleLowerCase()}.png`}
-        ></img>
-        <p style={{ color: "#FFF" }}>{Data[0].type[0]}{Data[0].type[1] ? ' / '+ Data[0].type[1] : null}</p>
-      </PokeCard>
-      }
+         
+         </div>
+          ))
+          }
     </ContainerCard>
   );
 }
