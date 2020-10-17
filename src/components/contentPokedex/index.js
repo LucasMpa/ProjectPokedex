@@ -2,15 +2,7 @@ import React from "react";
 import { ContainerCard, PokeCard} from "./styles";
 import Data from "../../exemple/pokedex.json";
 export default function ContentPokedex() {
-
-    var str = Data[82].name;
-    alert( str.replace(/[\[\].!'@,><|://\\;&*()_+=]/g, "") )
    return (
-
-
-  
-
-
     <ContainerCard>
       
       {Data.map((images, index) => (
