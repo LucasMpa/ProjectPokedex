@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "homepage": "https://yourgithubname.github.io/your-app-name",
+    "homepage": "https://lucasmpa.github.io/ProjectPokedex/",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
   },
