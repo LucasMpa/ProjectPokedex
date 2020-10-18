@@ -1,37 +1,50 @@
 import React from "react";
-import { ContainerCard, PokeCard } from "./styles";
+import {
+  Container,
+  ImgPokemon,
+  PokeCard,
+  TypeIndicator,
+  ContainerTypes,
+} from "./styles";
 import Data from "../../exemple/pokedex.json";
-import { firstCapitalLetter, getImage } from "../../utils";
-
+import {
+  firstCapitalLetter,
+  getImage,
+  getTypeOfPokemon,
+  pokemonType,
+} from "../../utils";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 export default function ContentPokedex() {
   return (
-    <ContainerCard>
+    <Container>
       {Data.map((_, index) => {
         return (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <PokeCard>
-              <p>
-                {Data[index].name} #{Data[index].id}
-              </p>
-              <img
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  backgroundColor: "#e11",
-                  width: "150px",
-                  height: "150px",
-                }}
-                src={getImage(Data[index].name)}
-              ></img>
-              <p style={{ color: "#FFF" }}>
+          <PokeCard>
+            <p>
+              {Data[index].name} #{Data[index].id}
+            </p>
+            <ImgPokemon src={getImage(Data[index].name)} />
+            <ContainerTypes>
+              {getTypeOfPokemon(Data[index].type[0])}
+              <TypeIndicator typePokemon={pokemonType}>
                 {firstCapitalLetter(Data[index].type[0])}
-                {Data[index].type[1] ? " / " + firstCapitalLetter(Data[index].type[1]) : null}
-              </p>
-            </PokeCard>
-          </div>
+              </TypeIndicator>
+
+              {getTypeOfPokemon(Data[index].type[1])}
+              {Data[index].type[1] ? (
+                <TypeIndicator typePokemon={pokemonType}>
+                  {Data[index].type[1]
+                    ? firstCapitalLetter(Data[index].type[1])
+                    : null}
+                </TypeIndicator>
+              ) : null}
+            </ContainerTypes>
+
+            <MdKeyboardArrowUp size={30} />
+          </PokeCard>
         );
       })}
-    </ContainerCard>
+    </Container>
   );
 }

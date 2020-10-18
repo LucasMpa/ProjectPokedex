@@ -1,0 +1,73 @@
+{
+  "grass": {
+    "bg": "#34C609",
+    "fc": "#FFF"
+  },
+  "fire": {
+    "bg": "#A2230A",
+    "fc": "#FFF"
+  },
+  "water": {
+    "bg": "#4592c4",
+    "fc": "#FFF"
+  },
+  "bug": {
+    "bg": "#729f3f",
+    "fc": "#FFF"
+  },
+  "normal": {
+    "bg": "#a4acaf",
+    "fc": "#FFF"
+  },
+  "poison": {
+    "bg": "#b97fc9",
+    "fc": "#FFF"
+  },
+  "electric": {
+    "bg": "#eed535",
+    "fc": "#FFF"
+  },
+  "fairy": {
+    "bg": "#fdb9e9",
+    "fc": "#FFF"
+  },
+  "fighting": {
+    "bg": "#d56723",
+    "fc": "#FFF"
+  },
+  "psychic": {
+    "bg": "#f366b9",
+    "fc": "#FFF"
+  },
+  "rock": {
+    "bg": "#a38c21",
+    "fc": "#FFF"
+  },
+  "steel": {
+    "bg": "#9eb7b8",
+    "fc": "#FFF"
+  },
+  "ice": {
+    "bg": "#51c4e7",
+    "fc": "#FFF"
+  },
+  "ghost": {
+    "bg": "#7b62a3",
+    "fc": "#FFF"
+  },
+  "flying": {
+    "bg": "",
+    "gradient": "linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%)",
+    "fc": "#FFF"
+  },
+  "ground": {
+    "bg": "",
+    "gradient": "linear-gradient(180deg, #f7de3f 50%, #ab9842 50%)",
+    "fc": "#FFF"
+  },
+  "dragon": {
+    "bg": "",
+    "gradient": "linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)",
+    "fc": "#FFF"
+  }
+}
