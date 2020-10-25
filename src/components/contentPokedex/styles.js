@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-gap: 3rem 2rem;
   grid-template-columns: repeat(auto-fill, 250px);
   justify-content: center;
-  @keyframes pokemon-up {
+  /* @keyframes pokemon-up {
     0%,
     100% {
       transform: translateY(0);
@@ -15,7 +15,8 @@ export const Container = styled.div`
     50% {
       transform: translateY(-0.4rem);
     }
-  }
+  } */
+ 
 `;
 
 export const ImgPokemon = styled.img`
@@ -24,6 +25,7 @@ export const ImgPokemon = styled.img`
   border-radius: 10px;
   width: 150px;
   height: 150px;
+  
 `;
 
 export const PokeCard = styled.div`
@@ -44,6 +46,7 @@ export const PokeCard = styled.div`
     text-align: center;
     color: #000;
   }
+  
 `;
 
 export const TypeIndicator = styled.div`
@@ -66,4 +69,5 @@ export const ContainerTypes = styled.div`
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  
 `;

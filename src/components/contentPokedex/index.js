@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   ImgPokemon,
@@ -14,13 +14,22 @@ import {
   pokemonType,
 } from "../../utils";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import ModalPokemons from "../modalPokemons";
 
 export default function ContentPokedex() {
+  const [visibilityModal, setVisibilityModal] = useState(false);
+  const [chosenPokemon, setChosenPokemon] = useState([]);
+
   return (
     <Container>
       {Data.map((_, index) => {
         return (
-          <PokeCard>
+          <PokeCard
+            onClick={() => {
+              setVisibilityModal(true);
+              setChosenPokemon(Data[index]);
+            }}
+          >
             <p>
               {Data[index].name} #{Data[index].id}
             </p>
@@ -32,19 +41,25 @@ export default function ContentPokedex() {
               </TypeIndicator>
 
               {getTypeOfPokemon(Data[index].type[1])}
-              {Data[index].type[1] ? (
+              {Data[index].type[1] && (
                 <TypeIndicator typePokemon={pokemonType}>
-                  {Data[index].type[1]
-                    ? firstCapitalLetter(Data[index].type[1])
-                    : null}
+                  {Data[index].type[1] &&
+                    firstCapitalLetter(Data[index].type[1])}
                 </TypeIndicator>
-              ) : null}
+              )}
             </ContainerTypes>
 
             <MdKeyboardArrowUp size={30} />
           </PokeCard>
         );
       })}
+      <ModalPokemons
+        active={visibilityModal}
+        cancel={() => {
+          setVisibilityModal(false);
+        }}
+        pokemonParticulars={chosenPokemon}
+      />
     </Container>
   );
 }
